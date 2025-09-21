@@ -11,20 +11,24 @@
 2. `composer install`
 3. 「.env.example」ファイルをコピーして「.env」ファイルを作成
 4. .envの以下の環境変数を次の通り変更
-DB_CONNECTION=mysql
+`` text
+<DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 MAIL_FROM_ADDRESS="noreply@laravel-app.local"
+```
 
 5. stripeパッケージインストール
 `composer require stripe/stripe-php`
 
 6. Stripe公式サイトで自アカウントの「公開可能キー」「シークレットキー」を確認し、.envに追加
+``` text
 STRIPE_KEY=（公開可能キー テスト環境用の場合pk_test_で始まる）
 STRIPE_SECRET=（シークレットキー  テスト環境用の場合sk_test_で始まる）
+```
 
 7. config/stripe.php追加
 ファイル内容は以下の通り
