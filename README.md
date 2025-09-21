@@ -11,7 +11,7 @@
 2. `composer install`
 3. 「.env.example」ファイルをコピーして「.env」ファイルを作成
 4. .envの以下の環境変数を次の通り変更
-`` text
+``` text
 <DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
