@@ -1,0 +1,165 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #000000;
+}
+
+textarea,
+input {
+  color: #000000;
+}
+
+/* ヘッダー */
+.header {
+  display: grid;
+  align-items: center;
+  padding: 16px 40px;
+  height: 80px;
+  border: 1px solid #E0DFDE;
+  background-color: #000000;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.header__logo {
+  grid-column: 1;
+}
+
+.header__search {
+  grid-column: 2;
+  border: 1px solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  color: #000000;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.header__form {
+  margin: 0 auto;
+  padding: 0 5px;
+  width: 90px;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+.button-wrapper {
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 200px;
+  cursor: pointer;
+}
+
+.button-wrapper:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.button-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;  
+}
+
+.header__link {
+  display:flex;
+  margin: 0 auto;
+  width: 300px;
+  justify-content: flex-end;
+  grid-column: 3;
+}
+
+.header__input {
+  margin: 0 auto;
+  padding: 0 5px;
+  width: 90px;
+  color: #fff;
+  background-color: #000;
+  font-size: 16px;
+  border: 0px;
+}
+
+.header__link--logout,
+.header__link--mypage {
+  margin: 0 auto;
+  width: 90px;
+  padding: 0 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__link--sell {
+  margin: 0 auto;
+  padding: 0 5px;
+  width: 100px;
+  border: 1px solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  color: #000000;
+}
+
+.header__link--sell a {
+  text-decoration: none;
+}
+
+/* コンテンツ */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 48px 0px;
+  background-color: #fff;
+}
+
+.content__heading {
+  text-align: center;
+  font-size: 32px;
+}
+
+/* ボタン */
+.btn {
+  display: block;
+  padding: 8px 32px;
+  border: none;
+  background-color: #ff5555;
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* アラート */
+.alert {
+  padding: 12px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+  background-color: #cce7ff;
+  color: #004085;
+  border: 1px solid #b3d7ff;
+}

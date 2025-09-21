@@ -1,0 +1,180 @@
+.sell-form__inner {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sell-form__form {
+  padding: 20px 96px;
+  width: 60vw;
+}
+
+.sell-form-section {
+  margin-bottom: 30px;
+}
+
+.sell-form-section__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.sell-form__group {
+  margin-top: 20px;
+}
+
+.sell-form__group:first-of-type {
+  margin-top: 0;
+}
+
+.sell-form__label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sell-form__input,
+.sell-form__select,
+.sell-form__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.sell-form__textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.sell-form__btn {
+  width: 100%;
+  height: 48px;
+  margin: 60px auto 0;
+}
+
+/* 商品画像 */
+.image-drop {
+  position: relative;
+  border: 2px dashed #f1b3b3;
+  border-radius: 12px;
+  height: 160px;
+  background: #fffaf9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 初期は画像を隠す */
+.image-drop img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+/* 画像があるときだけ画像を表示＆ボタンは消す */
+.image-drop.has-image img {
+  display: block;
+}
+
+.image-drop.has-image .choose-in-drop {
+  display: none;
+}
+
+.choose-in-drop {
+  padding: 10px 16px;
+  border: 1px solid #ff5555;
+  border-radius: 999px;
+  color: #ff5555;
+  font-weight: 700;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.choose-in-drop:hover {
+  background-color: #ff5555;
+  color: white;
+}
+
+/* カテゴリー */
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  padding: 6px 12px;
+  border: 1px solid #ff5555;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #ff5555;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.tag:hover {
+  background-color: #ff5555;
+  color: white;
+  border-color: #ff5555;
+}
+
+.tag:has(input:checked) {
+  background-color: #ff5555;
+    color: white;
+    border-color: #ff5555;
+}
+
+/* チェックボックス非表示 */
+input[type="checkbox"] {
+  display: none;
+}
+
+.price-input {
+  position: relative;
+}
+
+.price-input::before {
+  content: '¥';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-weight: 500;
+}
+
+.price-input input {
+  padding-left: 25px;
+}

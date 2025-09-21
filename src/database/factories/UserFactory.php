@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\Profile;
 
 class UserFactory extends Factory
 {
@@ -35,5 +36,42 @@ class UserFactory extends Factory
                 'email_verified_at' => null,
             ];
         });
+    }
+
+   /**
+     * プロフィール付きのユーザー（デフォルトでプロフィールも作成）
+     */
+    public function withProfile(): static
+    {
+        return $this->afterCreating(function ($user) {
+            Profile::factory()->create([
+                'user_id' => $user->id,
+            ]);
+        });
+    }
+
+   /**
+     * 特定のプロフィール情報付きユーザー
+     */
+    public function withProfileData(array $profileData = []): static
+    {
+        return $this->afterCreating(function ($user) use ($profileData) {
+            $defaultProfileData = [
+                'name' => $this->faker->name(),
+                'address' => $this->faker->address(),
+            ];
+
+            Profile::factory()->create(array_merge([
+                'user_id' => $user->id,
+            ], $defaultProfileData, $profileData));
+        });
+    }
+
+    /**
+     * プロフィール未完了のユーザー（プロフィール作成しない）
+     */
+    public function withoutProfile(): static
+    {
+        return $this->state([]);  // プロフィールを作成しない
     }
 }
