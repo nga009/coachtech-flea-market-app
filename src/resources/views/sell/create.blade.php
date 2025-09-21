@@ -72,10 +72,14 @@
                         <div class="select-wrapper">
                             <select class="sell-form__select" class="condition" name="condition">
                                 <option value="">選択してください</option>
-                                <option value="1">良好</option>
-                                <option value="2">目立った傷や汚れなし</option>
-                                <option value="3">やや傷や汚れあり</option>
-                                <option value="4">状態が悪い</option>
+                                <option value="1" {{
+                old('condition')==1 ? 'selected' : '' }}>良好</option>
+                                <option value="2" {{
+                old('condition')==2 ? 'selected' : '' }}>目立った傷や汚れなし</option>
+                                <option value="3" {{
+                old('condition')==3 ? 'selected' : '' }}>やや傷や汚れあり</option>
+                                <option value="4" {{
+                old('condition')==4 ? 'selected' : '' }}>状態が悪い</option>
                             </select>
                         </div>
                         @error('condition')
@@ -90,7 +94,7 @@
                 
                 <div class="sell-form__group">
                         <label class="sell-form__label" for="name">商品名</label>
-                        <input class="sell-form__input" type="text" name="name" placeholder="商品名を入力してください">
+                        <input class="sell-form__input" type="text" name="name" placeholder="商品名を入力してください" value="{{ old('name', $item->name ?? '') }}">
                         @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -98,7 +102,7 @@
 
                 <div class="sell-form__group">
                     <label class="sell-form__label" for="brand">ブランド名</label>
-                    <input class="sell-form__input" type="text" name="brand" placeholder="ブランド名を入力してください">
+                    <input class="sell-form__input" type="text" name="brand" placeholder="ブランド名を入力してください" value="{{ old('brand', $item->brand ?? '') }}" >
                         @error('brand')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -106,7 +110,7 @@
 
                 <div class="sell-form__group">
                     <label class="sell-form__label" for="description">商品の説明</label>
-                    <textarea class="sell-form__textarea" name="description" placeholder="商品の詳細や状態について説明してください"></textarea>
+                    <textarea class="sell-form__textarea" name="description" placeholder="商品の詳細や状態について説明してください">{{ old('description', $item->description ?? '') }}</textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -115,7 +119,7 @@
                 <div class="sell-form__group">
                     <label class="sell-form__label" for="price">販売価格</label>
                     <div class="price-input">
-                        <input class="sell-form__input" type="text" name="price" placeholder="価格を入力してください">
+                        <input class="sell-form__input" type="text" name="price" placeholder="価格を入力してください" value="{{ old('price', $item->price ?? '') }}">
                     </div>
                         @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>

@@ -15,6 +15,17 @@ class ItemsSeeder extends Seeder
      */
     public function run()
     {
+        // サンプル画像のコピー
+        $srcDir = base_path('database/seeders/assets/items'); 
+        $dstDir = 'item_images';
+
+        foreach (glob($srcDir.'/*.{jpg,png,gif,webp}', GLOB_BRACE) as $path) {
+            $filename = basename($path);
+
+            // public ディスク(storage/app/public/)にコピー
+            Storage::disk('public')->put("$dstDir/$filename", file_get_contents($path));
+        }
+
         $items = [
             [
                 'item_image' => 'item_images/Armani+Mens+Clock.jpg',

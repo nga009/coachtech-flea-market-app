@@ -37,9 +37,8 @@ class ProfileController extends Controller
     public function form()
     {
         $profile = auth()->user()->profile;
-        $isEdit = !is_null($profile);
         
-        return view('profile.form', compact('profile', 'isEdit'));
+        return view('profile.form', compact('profile'));
     }
 
     // 登録更新処理

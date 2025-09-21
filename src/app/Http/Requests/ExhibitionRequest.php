@@ -43,9 +43,9 @@ class ExhibitionRequest extends FormRequest
             'item_image.mimes' => '商品画像はJPEGまたはPNG形式でアップロードしてください',
             'categories.required' => '商品のカテゴリーを選択してください',
             'condition.required' => '商品の状態を入力してください',
-            'price.required' => '商品価格を入力してください',
-            'price.integer'  => '商品価格は数値で入力してください',
-            'price.min'      => '商品価格は0円以上で入力してください',
+            'price.required' => '販売価格を入力してください',
+            'price.integer'  => '販売価格は数値で入力してください',
+            'price.min'      => '販売価格は0円以上で入力してください',
         ];
     }
 
