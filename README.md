@@ -62,8 +62,8 @@ CVC: 任意の3桁（例：123）
 ```
 
 ## 使用技術(実行環境)
-- PHP 7.4.9
-- Laravel Framework 8.83.8
+- PHP 8.2.29
+- Laravel Framework 8.83.29
 - MySQL 8.0.26
 - Stripe 17.6
 
