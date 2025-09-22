@@ -88,9 +88,10 @@ input {
   background-color: #000;
   font-size: 16px;
   border: 0px;
+  cursor: pointer;
 }
 
-.header__link--logout,
+.header__link--login,
 .header__link--mypage {
   margin: 0 auto;
   width: 90px;

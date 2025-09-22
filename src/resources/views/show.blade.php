@@ -19,7 +19,7 @@
             <input class="header__input" type="submit" value="ログアウト">
         </form>
     @else
-        <div class="header__link--logout">
+        <div class="header__link--login">
             <a href="/login" class="button-link" >ログイン</a>
         </div>
     @endauth
@@ -132,8 +132,7 @@
                                     @if(!empty($comment->user->profile->profile_image))
                                         <img class="avatar-img-top" id=avatar src="{{ asset('storage/' .$comment->user->profile->profile_image) }}">
                                     @else
-                                        <div class="avatar-img-top">
-                                        </div>
+                                        <img class="avatar-img-top" id=avatar src="{{ asset('images/default.png') }}" alt="プロフィール画像">
                                     @endif
                                 </div>
                                 <div class="comment-content">
@@ -244,7 +243,6 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
             
             // フォームリセット
             this.reset();
-
             
         }
     })
@@ -268,8 +266,9 @@ function addCommentToList(comment) {
         <div class="comment-item">
             <div class="avatar">
                 @if(!empty($comment->user->profile->profile_image))
-                                <img id=avatar src="http://localhost/storage/${comment.profile_image}">
-
+                    <img id=avatar class="avatar-img-top" src="http://localhost/storage/${comment.profile_image}">
+                @else
+                    <img id=avatar class="avatar-img-top" src="http://localhost/images/default.png">
                 @endif
             </div>
             <div class="comment-content">

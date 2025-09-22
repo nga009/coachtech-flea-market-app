@@ -19,7 +19,7 @@
         <input class="header__input" type="submit" value="ログアウト">
     </form>
 @else
-    <div class="header__link--logout">
+    <div class="header__link--login">
         <a href="/login" class="button-link" >ログイン</a>
     </div>
 @endauth
