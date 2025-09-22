@@ -32,22 +32,16 @@ STRIPE_KEY=（公開可能キー テスト環境用の場合pk_test_で始まる
 STRIPE_SECRET=（シークレットキー  テスト環境用の場合sk_test_で始まる）
 ```
 
-7. config/stripe.php追加
-ファイル内容は以下の通り
-``` text
-<?php
-
-return [
-    'key' => env('STRIPE_KEY'),
-    'secret' => env('STRIPE_SECRET'),
-];
-```
-
-8. アプリケーションキーの作成
+7. アプリケーションキーの作成
 ``` bash
 php artisan key:generate
 ```
 
+8. シンボリックリンクの作成
+``` bash
+php artisan storage:link
+``` 
+    
 9. マイグレーションの実行
 ``` bash
 php artisan migrate
