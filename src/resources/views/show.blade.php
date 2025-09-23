@@ -125,39 +125,41 @@
                     <h2 class="comment-title">コメント</h2>
                     <span class="comment-count-text">({{ $item->commentsCount() }})</span>
                 </div>
-                    <div class="comments-container" id="comments-container">
-                        @foreach($item->comments as $comment)
-                            <div class="comment-item">
-                                <div class="avatar">
-                                    @if(!empty($comment->user->profile->profile_image))
-                                        <img class="avatar-img-top" id=avatar src="{{ asset('storage/' .$comment->user->profile->profile_image) }}">
-                                    @else
-                                        <img class="avatar-img-top" id=avatar src="{{ asset('images/default.png') }}" alt="プロフィール画像">
-                                    @endif
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-author">{{ $comment->user->name }}</div>
-                                    <div class="comment-text">{{ $comment->comment }}</div>
-                                </div>
+                <div class="comments-container" id="comments-container">
+                    @foreach($item->comments as $comment)
+                        <div class="comment-item">
+                            <div class="avatar">
+                                @if(!empty($comment->user->profile->profile_image))
+                                    <img class="avatar-img-top" id=avatar src="{{ asset('storage/' .$comment->user->profile->profile_image) }}">
+                                @else
+                                    <img class="avatar-img-top" id=avatar src="{{ asset('images/default.png') }}" alt="プロフィール画像">
+                                @endif
                             </div>
-                        @endforeach
-                    </div>
-                @auth
-                    <div class="comment-form">
-                        <h3 class="comment-form-title">商品へのコメント</h3>
-                        <form id="comment-form">
-                            @csrf
-                            <textarea class="comment-textarea" 
-                                    name="comment" 
-                                    placeholder="コメントを入力してください"></textarea>
-                                    @error('comment')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                            
+                            <div class="comment-content">
+                                <div class="comment-author">{{ $comment->user->name }}</div>
+                                <div class="comment-text">{{ $comment->comment }}</div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="comment-form">
+                    <h3 class="comment-form-title">商品へのコメント</h3>
+                    <form id="comment-form">
+                        @csrf
+                        <textarea class="comment-textarea" 
+                                name="comment" 
+                                placeholder="コメントを入力してください"></textarea>
+                                @error('comment')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                        
+                        @auth
                             <button type="submit" class="comment-submit">コメントを送信する</button>
-                        </form>
-                    </div>
-                @endauth
+                        @else
+                            <button type="submit" class="comment-submit" disabled>コメントを送信する</button>
+                        @endauth
+                    </form>
+                </div>
             </div>
 
         </div>

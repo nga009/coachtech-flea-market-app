@@ -76,6 +76,8 @@
                     <div class="postal-code">〒<input type="text" name="shipping_postcode" class="address-info__postcode" value="{{ $address['shipping_postcode'] }}" readonly></div>
                     <div class="address-text">
                         <input type="text" name="shipping_address" class="address-info__address" value="{{ $address['shipping_address'] }}" readonly>
+                    </div>
+                    <div class="address-text">
                         <input type="text" name="shipping_building" class="address-info__address" value="{{ $address['shipping_building'] }}" readonly>
                     </div>
                 </div>

@@ -136,12 +136,13 @@ class PurchaseController extends Controller
                 return redirect()->route('items.index', $purchase->item);
             }
             
+            Log::error('決算が完了していません ' . $item->id);
             return redirect()->route('purchase.create', ['item_id' => $item->id])
                 ->with('error', '決算が完了していません');
                 
         } catch (\Exception $e) {
             Log::error('Purchase success handling failed: ' . $e->getMessage());
-            return rredirect()->route('purchase.create', ['item_id' => $item->id])
+            return redirect()->route('purchase.create', ['item_id' => $item->id])
                 ->with('error', '購入処理でエラーが発生しました');
         }
     }
@@ -151,7 +152,9 @@ class PurchaseController extends Controller
      */
     public function cancel(Item $item)
     {
+        Log::error('購入をキャンセルしました ' . $item->id);
+
         return redirect()->route('purchase.create', ['item_id' => $item->id])
-            ->with('info', '購入をキャンセルしました');
+            ->with('error', '購入をキャンセルしました');
     }
 }

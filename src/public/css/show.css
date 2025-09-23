@@ -304,6 +304,10 @@
   background-color: #ff5252;
 }
 
+.comment-submit:disabled {
+  background-color: #ccc;
+}
+
 .star-icon {
   font-size: 16px;
   color: #ddd;

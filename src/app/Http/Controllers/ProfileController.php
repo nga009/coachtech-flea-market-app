@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     // プロフィール画面（マイページ）
     public function index(Request $request) {
-        $mypagetab = $request->get('mypagetab', 'sell');
+        $page = $request->get('page', 'sell');
         $keyword = $request->get('keyword', '');
         $user = auth()->user();
         $profile = auth()->user()->profile;
@@ -20,7 +20,7 @@ class ProfileController extends Controller
 
         // 検索
         // 出品した商品タブの場合
-        if ($mypagetab === 'sell') {
+        if ($page === 'sell') {
             $items = $user->sellingItems()->get();
 
         // 購入した商品タブの場合
@@ -29,7 +29,7 @@ class ProfileController extends Controller
 
         }
 
-        return view('profile.index', compact('user','profile', 'items', 'mypagetab'));
+        return view('profile.index', compact('user','profile', 'items', 'page'));
 
     }
 

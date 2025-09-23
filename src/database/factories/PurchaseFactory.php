@@ -23,7 +23,8 @@ class PurchaseFactory extends Factory
             'shipping_postcode' => $this->faker->postcode,
             'shipping_address' => $this->faker->address,
             'shipping_building' => $this->faker->secondaryAddress,
-            'payment_method' => numberBetween(1,2),
+            'payment_method' => $this->faker->numberBetween(1,2),
+            'stripe_session_id' => $this->faker->regexify('[A-Za-z0-9]{10}'),
         ];
     }
 }

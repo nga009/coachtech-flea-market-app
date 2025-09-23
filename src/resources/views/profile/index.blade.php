@@ -50,15 +50,15 @@
             {{-- タブナビゲーション --}}
             <ul class="nav-tabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link {{ $mypagetab === 'sell' ? 'active' : '' }}" 
-                        href="{{ route('profile.index', ['mypagetab' => 'sell']) }}"
+                    <a class="nav-link {{ $page === 'sell' ? 'active' : '' }}" 
+                        href="{{ route('profile.index', ['page' => 'sell']) }}"
                         role="tab">
                         出品した商品
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link {{ $mypagetab === 'buy' ? 'active' : '' }}" 
-                        href="{{ route('profile.index', ['mypagetab' => 'buy']) }}"
+                    <a class="nav-link {{ $page === 'buy' ? 'active' : '' }}" 
+                        href="{{ route('profile.index', ['page' => 'buy']) }}"
                         role="tab">
                         購入した商品
                     </a>
